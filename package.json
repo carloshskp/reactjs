@@ -1,0 +1,23 @@
+{
+  "name": "first-react-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "default.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Henrique Bernardes",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "webpack": "^1.14.0"
+  }
+}
