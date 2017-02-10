@@ -1,13 +1,45 @@
 var React = require('react');
-// Criação do componente
+var Card = require('./Card');
+// Os dados que vamos utilizar nos cards (poderiam prover de um request em alguma api, por exemplo)
+var data = [
+	{
+		title: "Componente 1",
+		subtitle: "Aqui será o subtítulo",
+		content: "Tudo escrito aqui fica no this.props.children"
+	},
+	{
+		title: "Componente 2",
+		subtitle: "subtítulo 2",
+		content: "Conteúdo do card"
+	},
+];
 var Index = React.createClass({
-	// Função render
+	// Definição de estado inicial
+	getInitialState: function() {
+		return {
+			cards: []
+		}
+	},
+	// Depois de montar o componente
+	componentDidMount: function() {
+		// Variável data recebe os cartões com dados
+		// à partir da função map, que nos permite percorrer todo o array
+		// e retornar os valores
+		data = data.map(function(card) {
+			return <Card title={card.title} subtitle={card.subtitle}>{card.content}</Card>;
+		})
+		// Alterando estado do componente
+		this.setState({
+			cards: data
+		});
+	},
 	render: function(){
-		// Como retorno podemos escrever JSX colocando tags html e componentes
+		// na linha 40 estamos exibindo cards guardados no state cards
 		return (
-				<h1>Show! :D</h1>
+				<section className="container">
+					{this.state.cards}
+				</section>
 			);
 	}
 });
-// Exportando o componente
 module.exports = Index;
