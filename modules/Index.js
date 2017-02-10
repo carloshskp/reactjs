@@ -24,9 +24,10 @@ var Index = React.createClass({
 	componentDidMount: function() {
 		// Variável data recebe os cartões com dados
 		// à partir da função map, que nos permite percorrer todo o array
-		// e retornar os valores
+		// e retornar os valores o key é uma propriedade obrigatória em cada item do
+		// array e estamos usando um número aleatório
 		data = data.map(function(card) {
-			return <Card title={card.title} subtitle={card.subtitle}>{card.content}</Card>;
+			return <Card key={Math.random()} title={card.title} subtitle={card.subtitle}>{card.content}</Card>;
 		})
 		// Alterando estado do componente
 		this.setState({
